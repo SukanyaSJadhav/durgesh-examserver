@@ -1,60 +1,55 @@
 package com.exam.model;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class UserRole {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long userRoleId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long userRoleId;
 
-	@ManyToOne(fetch = FetchType.EAGER)
-	private UserEntity userEntity;
-	
-	@ManyToOne
-	private Role role;
+    @ManyToOne(fetch = FetchType.EAGER)
+    private UserEntity userEntity;
 
-	public UserRole(Long userRoleId, UserEntity userEntity, Role role) {
-		super();
-		this.userRoleId = userRoleId;
-		this.userEntity = userEntity;
-		this.role = role;
-	}
+    @ManyToOne
+    private Role role;
 
-	public Long getUserRoleId() {
-		return userRoleId;
-	}
+    public UserRole(Long userRoleId, UserEntity userEntity, Role role) {
+        super();
+        this.userRoleId = userRoleId;
+        this.userEntity = userEntity;
+        this.role = role;
+    }
 
-	public void setUserRoleId(Long userRoleId) {
-		this.userRoleId = userRoleId;
-	}
+    public UserRole() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
-	public UserEntity getUserEntity() {
-		return userEntity;
-	}
+    public Long getUserRoleId() {
+        return userRoleId;
+    }
 
-	public void setUserEntity(UserEntity userEntity) {
-		this.userEntity = userEntity;
-	}
+    public void setUserRoleId(Long userRoleId) {
+        this.userRoleId = userRoleId;
+    }
 
-	public Role getRole() {
-		return role;
-	}
+    public UserEntity getUserEntity() {
+        return userEntity;
+    }
 
-	public void setRole(Role role) {
-		this.role = role;
-	}
+    public void setUserEntity(UserEntity userEntity) {
+        this.userEntity = userEntity;
+    }
 
-	public UserRole() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+    public Role getRole() {
+        return role;
+    }
 
-	
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+
 }
